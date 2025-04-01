@@ -1,0 +1,109 @@
+/* Home.css - Updated styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #f0f4f8, #ffffff); /* Lighter background */
+  padding: 40px 80px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.home-title {
+  font-size: 25px;
+  margin: 0;
+  color: #115588; /* Dark grey-black color */
+  font-weight: 600;
+  text-transform: sentence-case;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 10px; /* Reduced gap between items */
+  max-width: 150px;
+  width: 100%;
+  margin: 30px auto;
+  place-items: center; /* Center both horizontally and vertically */
+  justify-content: center;
+}
+
+.home-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 100%; /* Full width of grid cell */
+}
+
+.home-image {
+  width: 100%; /* Fill container width */
+  max-width: 320px; /* Maximum size */
+  height: 220px;
+  min-width: 220px; /* Minimum width */
+  max-width: 400px; /* Maximum width */
+  min-height: 220px; /* Minimum height */
+  object-fit: cover;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin: 0 auto; /* Center horizontally */
+}
+
+.home-card:hover .home-image {
+  transform: scale(1.08); /* Slightly reduced zoom for smoothness */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.home-card:hover .home-text {
+  color: #0a3a5e; /* Darker blue on hover */
+}
+
+.home-text {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #115588; /* Matching title color */
+  text-transform: capitalize;
+  text-align: center; /* Ensure text centering */
+}
+
+/* Fixed grid centering issues */
+@media (max-width: 768px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-container {
+    padding: 40px 15px;
+  }
+}
+
+/* Add cursor pointer to logout */
+.home-logout {
+  color: #dc3545;
+  cursor: default; /* Default arrow when not hovering */
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.home-logout:hover {
+  color: #c82333;
+  cursor: pointer; /* Finger pointer on hover */
+}
+
+/* In your CSS file */
+input[type="time"]::-webkit-datetime-edit-ampm-field {
+  display: none;
+}
+
+input[type="time"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
